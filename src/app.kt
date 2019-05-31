@@ -1,3 +1,7 @@
+import operations.PGet
+import operations.PSet
+import operations.PUpsert
+
 fun main(args: Array<String>) {
     var rdb = RockyDB("localhost", 4126)
     rdb.listen()

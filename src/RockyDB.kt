@@ -1,3 +1,7 @@
+import utils.generateUniqueId
+import dataStructures.IDataStructure
+import operations.IOperation
+
 class RockyDB {
     var host: String? = "localhost"
     var port: Int? = 4126
@@ -15,7 +19,7 @@ class RockyDB {
         }
     }
 
-    public fun listen() {
+    fun listen() {
         var t = Thread(Runnable {
             println("Listening for connections on $host: $port")
             while(true) {
@@ -30,9 +34,15 @@ class RockyDB {
         t.start()
     }
 
-    public fun enqueueOperation(operation: IOperation): Int {
+    fun enqueueOperation(operation: IOperation): String {
+        val uid = generateUniqueId()
+        operation.setOId(uid)
         this.operationQueue.add(operation)
-        return this.operationQueue.size
+        return uid
+    }
+
+    fun instant(operation: IOperation): IResult {
+        return this._processOperation(operation)
     }
 
     private fun _processOperation(operation: IOperation): IResult {

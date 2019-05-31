@@ -1,3 +1,14 @@
+/**
+ * Primitive Get
+ * @author Sorin Banica
+ */
+package operations
+
+import GenericResult
+import dataStructures.IDataStructure
+import IResult
+import dataStructures.Primitive
+
 class PGet: AOperation {
     constructor (key: String): super(key) {}
 

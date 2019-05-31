@@ -1,3 +1,5 @@
+package dataStructures
+
 class Primitive: IDataStructure {
     var data: String = ""
 

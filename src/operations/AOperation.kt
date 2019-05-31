@@ -1,6 +1,16 @@
+/**
+ * Abstract Operation
+ * @author Sorin Banica
+ */
+package operations
+
+import dataStructures.IDataStructure
+import IResult
+
 abstract class AOperation: IOperation {
     var key: String = ""
     var value: String = ""
+    var oid: String = ""
 
     constructor(key: String, value: String) {
         this.key = key
@@ -9,6 +19,10 @@ abstract class AOperation: IOperation {
 
     constructor(key: String) {
         this.key = key
+    }
+
+    override fun setOId(id: String) {
+        this.oid = id
     }
 
     abstract override fun run(data: HashMap<String, IDataStructure>): IResult
