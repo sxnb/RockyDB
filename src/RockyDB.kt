@@ -23,7 +23,7 @@ class RockyDB {
         var t = Thread(Runnable {
             println("Listening for connections on $host: $port")
             while(true) {
-                while(this.operationQueue.size > 0) {
+                while(this.operationQueue.count() > 0) {
                     var r = this._processOperation(this.operationQueue.removeAt(0))
                     r.toStdOut()
                 }

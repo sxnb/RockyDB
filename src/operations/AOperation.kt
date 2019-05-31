@@ -21,6 +21,8 @@ abstract class AOperation: IOperation {
         this.key = key
     }
 
+    constructor() {}
+
     override fun setOId(id: String) {
         this.oid = id
     }
