@@ -37,11 +37,13 @@ class OperationFactory {
             "pget" -> 2
             "pset" -> 3
             "pupsert" -> 3
+            "qcreate" -> 2
             "qdequeue" -> 2
             "qenqueue" -> 3
             "qisempty" -> 2
             "qpeek" -> 2
             "qsize" -> 2
+            "screate" -> 2
             "sisempty" -> 2
             "speek" -> 2
             "ssize" -> 2
@@ -66,11 +68,13 @@ class OperationFactory {
             "pget" -> op = PGet(values[1])
             "pset" -> op = PSet(values[1], values[2])
             "pupsert" -> op = PUpsert(values[1], values[2])
+            "qcreate" -> op = QCreate(values[1])
             "qdequeue" -> op = QDequeue(values[1])
             "qenqueue" -> op = QEnqueue(values[1], values[2])
             "qisempty" -> op = QIsEmpty(values[1])
             "qpeek" -> op = QPeek(values[1])
             "qsize" -> op = QSize(values[1])
+            "screate" -> op = SCreate(values[1])
             "sisempty" -> op = SIsEmpty(values[1])
             "speek" -> op = SPeek(values[1])
             "ssize" -> op = SSize(values[1])
