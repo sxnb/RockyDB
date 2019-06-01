@@ -2,7 +2,7 @@
 
 ### About
 
-RockyDB is a in-memory storage engine which allows fast&easy storage of various data structures.
+RockyDB is an in-memory storage engine which allows fast&easy storage of various data structures.
 At the moment, RockyDB can store primitive data types, as well as Lists, Queues and Stacks.
 
 ### Features
