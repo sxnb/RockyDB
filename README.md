@@ -45,13 +45,4 @@ Below you can find a table of all available commands. The commands are case inse
 | SSize | _key_ | **ssize mystack** | Returns the size of a stack. |
 | SIsEmpty | _key_ | **sisempty mystack** | Returns whether a stack is empty. |
 
-TODO
-| Command | Arguments | Example | Description |
-| ------ | ------ | ------ | ------ |
-| Ping | | | |
-| Flush | | | |
-| Type | | |  |
-| Exists | | | |
-| Increment | | | |
-| Decrement | | | |
-| Watch | | | |
+
