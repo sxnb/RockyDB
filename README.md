@@ -48,10 +48,10 @@ Below you can find a table of all available commands. The commands are case inse
 TODO
 | Command | Arguments | Example | Description |
 | ------ | ------ | ------ | ------ |
-| Ping||| |
-| Flush||| |
-| Type||| |
-| Exists||| |
-| Increment||| |
-| Decrement||| |
-| Watch||| |
+| Ping | | | |
+| Flush | | | |
+| Type | | |  |
+| Exists | | | |
+| Increment | | | |
+| Decrement | | | |
+| Watch | | | |
