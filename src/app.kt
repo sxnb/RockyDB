@@ -4,7 +4,8 @@ import operations.PSet
 import operations.PUpsert
 
 fun main(args: Array<String>) {
-    var rdb = RockyDB("localhost", 4126)
+    var settings = Settings()
+    var rdb = RockyDB(settings)
     rdb.listen()
 
     var o1 = PSet("a", "500")

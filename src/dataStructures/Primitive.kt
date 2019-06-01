@@ -1,6 +1,8 @@
 package dataStructures
 
-class Primitive: IDataStructure {
+import java.io.Serializable
+
+class Primitive: IDataStructure, Serializable {
     var data: String = ""
     override var name: String = "primitive"
 

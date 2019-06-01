@@ -1,5 +1,5 @@
 /**
- * Queue Size
+ * Queue Dequeue
  * @author Sorin Banica
  */
 package operations
@@ -9,8 +9,9 @@ import dataStructures.IDataStructure
 import IResult
 import dataStructures.RDBList
 import dataStructures.RDBQueue
+import dataStructures.RDBStack
 
-class QSize: AOperation {
+class SPop: AOperation {
     constructor (key: String): super(key) {}
 
     override fun run(data: HashMap<String, IDataStructure>): IResult {
@@ -18,10 +19,10 @@ class QSize: AOperation {
             return GenericResult<Boolean>(false)
         }
 
-        if (data[key]?.name !== "queue") {
+        if (data[key]?.name !== "stack") {
             return GenericResult<Boolean>(false)
         }
 
-        return (data[key] as RDBQueue).size()
+        return (data[key] as RDBStack).pop()
     }
 }

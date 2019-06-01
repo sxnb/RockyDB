@@ -11,6 +11,7 @@ abstract class AOperation: IOperation {
     var key: String = ""
     var value: String = ""
     var oid: String = ""
+    private var async: Boolean = true
 
     constructor(key: String, value: String) {
         this.key = key
@@ -25,6 +26,14 @@ abstract class AOperation: IOperation {
 
     override fun setOId(id: String) {
         this.oid = id
+    }
+
+    fun makeAsync() {
+        this.async = true
+    }
+
+    fun isAsync(): Boolean {
+        return this.async
     }
 
     abstract override fun run(data: HashMap<String, IDataStructure>): IResult

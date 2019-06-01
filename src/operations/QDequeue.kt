@@ -11,7 +11,7 @@ import dataStructures.RDBList
 import dataStructures.RDBQueue
 
 class QDequeue: AOperation {
-    constructor (key: String, value: String): super(key, value) {}
+    constructor (key: String): super(key) {}
 
     override fun run(data: HashMap<String, IDataStructure>): IResult {
         if (data.containsKey(key)) {

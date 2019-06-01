@@ -2,8 +2,9 @@ package dataStructures
 
 import IResult
 import GenericResult
+import java.io.Serializable
 
-class RDBList: IDataStructure {
+class RDBList: IDataStructure, Serializable {
     var data: MutableList<String> = mutableListOf()
     override var name: String = "list"
 

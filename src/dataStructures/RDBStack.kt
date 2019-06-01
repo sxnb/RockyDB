@@ -4,24 +4,24 @@ import IResult
 import GenericResult
 import java.io.Serializable
 
-class RDBQueue: IDataStructure, Serializable {
+class RDBStack: IDataStructure, Serializable {
     var data: MutableList<String> = mutableListOf()
-    override var name: String = "queue"
+    override var name: String = "stack"
 
     constructor() {}
 
-    fun enqueue(item: String): IResult {
+    fun push(item: String): IResult {
         this.data.add(item)
 
         return GenericResult<Int>(this.data.count())
     }
 
-    fun dequeue(): IResult {
+    fun pop(): IResult {
         if (this.data.isEmpty()) {
             return GenericResult<Boolean>(false)
         }
 
-        return GenericResult<String>(this.data.removeAt(0))
+        return GenericResult<String>(this.data.removeAt(this.data.count() - 1))
     }
 
     fun peek(): IResult {
