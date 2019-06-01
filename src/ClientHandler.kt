@@ -57,7 +57,7 @@ class ClientHandler {
     }
 
     private fun _handleOperationResult(result: IResult) {
-        this._writeToSocket("AA: " + result.serialize())
+        this._writeToSocket(result.serialize())
     }
 
     private fun _writeToSocket(message: String) {

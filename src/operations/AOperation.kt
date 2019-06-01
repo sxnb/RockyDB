@@ -11,7 +11,7 @@ abstract class AOperation: IOperation {
     var key: String = ""
     var value: String = ""
     var oid: String = ""
-    private var async: Boolean = true
+    private var async: Boolean = false
 
     constructor(key: String, value: String) {
         this.key = key

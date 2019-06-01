@@ -7,12 +7,21 @@ class OperationFactory {
         var text = text.trim()
         var values: Array<String> = text.split(" ").toTypedArray()
         if (values.count() > 3) {
-            // todo merge the values after value[0] and value[1]
             var mergedValue: String = ""
             for (i in 2 until values.count()) {
-                mergedValue += values[i]
+                if (values[i] !== "async") {
+                    mergedValue += values[i] + " "
+                }
             }
-            values[2] = mergedValue
+
+            mergedValue = mergedValue.trim()
+
+            if (values.last().toLowerCase() === "async") {
+                values[2] = mergedValue
+                values[3] = "async"
+            } else {
+                values[2] = mergedValue
+            }
         }
 
         values[0] = values[0].toLowerCase()
@@ -70,9 +79,6 @@ class OperationFactory {
             else -> throw Exception("Invalid operation.")
         }
 
-        if (values.last().toLowerCase() === "async") {
-            op.makeAsync()
-        }
 
         return op
     }
