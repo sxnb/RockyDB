@@ -1,5 +1,7 @@
 # RockyDB
 
+[![WorkInProgress](https://img.shields.io/static/v1.svg?label=&message=work%20in%20progress&color=informational)](https://about.colorcode.me)
+
 ### About
 
 RockyDB is an in-memory storage engine which allows fast&easy storage of various data structures.
