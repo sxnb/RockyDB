@@ -4,7 +4,7 @@
  */
 package operations
 
-import GenericResult
+import RockyDB.GenericResult
 import dataStructures.IDataStructure
 import dataStructures.Primitive
 

@@ -5,7 +5,7 @@
 package operations
 
 import dataStructures.IDataStructure
-import IResult
+import RockyDB.IResult
 
 interface IOperation {
     fun run(data: HashMap<String, IDataStructure>): IResult

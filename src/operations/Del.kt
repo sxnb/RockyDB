@@ -4,9 +4,9 @@
  */
 package operations
 
-import GenericResult
+import RockyDB.GenericResult
 import dataStructures.IDataStructure
-import IResult
+import RockyDB.IResult
 
 class Del: AOperation {
     constructor (key: String): super(key) {}

@@ -4,9 +4,9 @@
  */
 package operations
 
-import GenericResult
+import RockyDB.GenericResult
 import dataStructures.IDataStructure
-import IResult
+import RockyDB.IResult
 import dataStructures.RDBList
 
 class LDel: AOperation {

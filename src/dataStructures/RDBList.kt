@@ -1,7 +1,7 @@
 package dataStructures
 
-import IResult
-import GenericResult
+import RockyDB.IResult
+import RockyDB.GenericResult
 import java.io.Serializable
 
 class RDBList: IDataStructure, Serializable {

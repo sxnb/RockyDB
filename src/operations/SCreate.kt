@@ -4,8 +4,8 @@
  */
 package operations
 
-import GenericResult
-import IResult
+import RockyDB.GenericResult
+import RockyDB.IResult
 import dataStructures.*
 
 class SCreate: AOperation {

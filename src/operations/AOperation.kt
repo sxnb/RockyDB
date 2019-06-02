@@ -5,7 +5,7 @@
 package operations
 
 import dataStructures.IDataStructure
-import IResult
+import RockyDB.IResult
 
 abstract class AOperation: IOperation {
     var key: String = ""

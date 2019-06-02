@@ -1,3 +1,5 @@
+package RockyDB
+
 class Settings {
     var host: String = "localhost"
     var port: Int = 4126

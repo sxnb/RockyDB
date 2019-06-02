@@ -1,3 +1,5 @@
+package RockyDB
+
 class GenericResult<T>: IResult {
     private var data: T
     private var oid: String = ""
