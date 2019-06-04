@@ -16,11 +16,13 @@ class RockyDB {
 
     var data: HashMap<String, IDataStructure> = hashMapOf()
     var operationQueue: MutableList<IOperation> = mutableListOf()
+    var clients: MutableList<Thread> = mutableListOf()
 
     constructor(settings: Settings) {
         this.settings = settings
         this.continuousDumpThread()
         this.processLoop()
+        this.clientsLoop()
     }
 
     fun listen() {
@@ -30,10 +32,24 @@ class RockyDB {
 
             while (true) {
                 val client = server.accept()
-                ClientHandler(client).run(this)
+
+                var t = Thread(Runnable {
+                    val clientHandler = ClientHandler(client)
+                    clientHandler.run(this)
+                })
+                this.clients.add(t)
+                this.clients.last().start()
+
             }
         })
         t.start()
+    }
+
+    /**
+     *
+     */
+    fun clientsLoop() {
+        // TODO remove hanging threads
     }
 
     /**

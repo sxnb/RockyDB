@@ -4,10 +4,10 @@
  */
 package operations
 
-import RockyDB.GenericResult
 import dataStructures.IDataStructure
-import RockyDB.IResult
 import dataStructures.RDBList
+import RockyDB.GenericResult
+import RockyDB.IResult
 
 class LAdd: AOperation {
     constructor (key: String, value: String): super(key, value) {}

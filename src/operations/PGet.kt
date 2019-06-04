@@ -4,10 +4,10 @@
  */
 package operations
 
-import RockyDB.GenericResult
 import dataStructures.IDataStructure
-import RockyDB.IResult
 import dataStructures.Primitive
+import RockyDB.GenericResult
+import RockyDB.IResult
 
 class PGet: AOperation {
     constructor (key: String): super(key) {}
@@ -21,6 +21,6 @@ class PGet: AOperation {
             return GenericResult<Boolean>(false)
         }
 
-        return GenericResult<String?>(data[key]?.serialize())
+        return GenericResult<String?>((data[key] as Primitive).get())
     }
 }

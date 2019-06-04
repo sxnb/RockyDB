@@ -4,11 +4,10 @@
  */
 package operations
 
-import RockyDB.GenericResult
 import dataStructures.IDataStructure
-import RockyDB.IResult
-import dataStructures.RDBList
 import dataStructures.RDBQueue
+import RockyDB.GenericResult
+import RockyDB.IResult
 
 class QEnqueue: AOperation {
     constructor (key: String, value: String): super(key, value) {}

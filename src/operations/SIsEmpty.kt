@@ -1,15 +1,13 @@
 /**
- * Queue IsEmpty
+ * Stack IsEmpty
  * @author Sorin Banica
  */
 package operations
 
-import RockyDB.GenericResult
 import dataStructures.IDataStructure
-import RockyDB.IResult
-import dataStructures.RDBList
-import dataStructures.RDBQueue
 import dataStructures.RDBStack
+import RockyDB.GenericResult
+import RockyDB.IResult
 
 class SIsEmpty: AOperation {
     constructor (key: String): super(key) {}

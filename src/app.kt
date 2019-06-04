@@ -8,6 +8,7 @@ import operations.PSet
 import operations.PUpsert
 
 fun main(args: Array<String>) {
+    println(args.toString())
     var settings = Settings()
     var rdb = RockyDB(settings)
     rdb.listen()

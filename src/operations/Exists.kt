@@ -1,5 +1,5 @@
 /**
- * Implementation of Delete
+ * Implementation of Exists
  * @author Sorin Banica
  */
 package operations
@@ -8,15 +8,14 @@ import dataStructures.IDataStructure
 import RockyDB.GenericResult
 import RockyDB.IResult
 
-class Del: AOperation {
+class Exists: AOperation {
     constructor (key: String): super(key) {}
 
     override fun run(data: HashMap<String, IDataStructure>): IResult {
         if (!data.containsKey(key)) {
-            return GenericResult<Int>(0)
+            return GenericResult<Boolean>(false)
         }
 
-        data.remove(key)
-        return GenericResult<Int>(1)
+        return GenericResult<Boolean>(true)
     }
 }

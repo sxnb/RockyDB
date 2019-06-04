@@ -1,15 +1,13 @@
 /**
- * List Create
+ * Queue Create
  * @author Sorin Banica
  */
 package operations
 
-import RockyDB.GenericResult
 import dataStructures.IDataStructure
-import RockyDB.IResult
-import dataStructures.Primitive
-import dataStructures.RDBList
 import dataStructures.RDBQueue
+import RockyDB.GenericResult
+import RockyDB.IResult
 
 class QCreate: AOperation {
     constructor (key: String): super(key) {}

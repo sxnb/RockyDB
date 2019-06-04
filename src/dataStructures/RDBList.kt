@@ -1,10 +1,10 @@
 package dataStructures
 
+import java.io.Serializable
 import RockyDB.IResult
 import RockyDB.GenericResult
-import java.io.Serializable
 
-class RDBList: IDataStructure, Serializable {
+class RDBList: IDataStructure, Serializable, AObservable {
     var data: MutableList<String> = mutableListOf()
     override var name: String = "list"
 
@@ -13,6 +13,7 @@ class RDBList: IDataStructure, Serializable {
     fun add(item: String): IResult {
         this.data.add(item)
 
+        this.notifyObservers(Event.UPDATED)
         return GenericResult<Int>(this.data.count())
     }
 
@@ -26,6 +27,7 @@ class RDBList: IDataStructure, Serializable {
         }
 
         this.data.removeAt(pos)
+        this.notifyObservers(Event.DELETED)
         return GenericResult<Boolean>(true)
     }
 

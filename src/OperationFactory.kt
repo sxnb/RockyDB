@@ -51,6 +51,12 @@ class OperationFactory {
             "ssize" -> 2
             "spop" -> 2
             "spush" -> 3
+            "watch" -> 2
+            "ping" -> 1
+            "flush" -> 1
+            "type" -> 2
+            "exists" -> 2
+
             else -> throw Exception("Invalid operation.")
         }
 
@@ -82,6 +88,12 @@ class OperationFactory {
             "ssize" -> op = SSize(values[1])
             "spop" -> op = SPop(values[1])
             "spush" -> op = SPush(values[1], values[2])
+            "watch" -> op = Watch(values[1])
+            "ping" -> op = Ping()
+            "flush" -> op = Flush()
+            "type" -> op = Type(values[1])
+            "exists" -> op = Exists(values[1])
+
             else -> throw Exception("Invalid operation.")
         }
 

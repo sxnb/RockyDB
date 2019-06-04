@@ -4,11 +4,11 @@
  */
 package operations
 
-import RockyDB.GenericResult
-import dataStructures.IDataStructure
-import RockyDB.IResult
 import java.io.FileOutputStream
 import java.io.ObjectOutputStream
+import dataStructures.IDataStructure
+import RockyDB.GenericResult
+import RockyDB.IResult
 
 class Dump: AOperation {
     constructor (key: String): super(key) {}

@@ -1,5 +1,5 @@
 /**
- * Implementation of Delete
+ * Implementation of Type
  * @author Sorin Banica
  */
 package operations
@@ -8,15 +8,14 @@ import dataStructures.IDataStructure
 import RockyDB.GenericResult
 import RockyDB.IResult
 
-class Del: AOperation {
+class Type: AOperation {
     constructor (key: String): super(key) {}
 
     override fun run(data: HashMap<String, IDataStructure>): IResult {
         if (!data.containsKey(key)) {
-            return GenericResult<Int>(0)
+            return GenericResult<String>("no-key")
         }
 
-        data.remove(key)
-        return GenericResult<Int>(1)
+        return GenericResult<String>((data[key] as IDataStructure).name)
     }
 }
