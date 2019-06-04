@@ -1,5 +1,3 @@
-# RockyDB
-
 [![RockyDB](http://colorcode.me/assets/rockydb.png)](https://about.colorcode.me)
 
 [![WorkInProgress](https://img.shields.io/static/v1.svg?label=&message=work%20in%20progress&color=informational)](https://about.colorcode.me)
