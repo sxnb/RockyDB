@@ -1,18 +1,19 @@
 package RockyDB
 
-import utils.generateUniqueId
-import dataStructures.IDataStructure
-import operations.IOperation
-import operations.OperationType
 import java.io.FileOutputStream
 import java.io.ObjectOutputStream
-import utils.e_log
 import java.util.HashMap
 import java.io.FileInputStream
 import java.io.ObjectInputStream
 import java.net.ServerSocket
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock
+import dataStructures.IDataStructure
+import operations.IOperation
+import operations.OperationType
+import utils.generateUniqueId
+import utils.e_log
+import java.net.InetAddress
 
 /**
  * This is the main class of RockyDB. It handles the management of threads as well as the
@@ -35,8 +36,8 @@ class RockyDB {
 
     fun listen() {
         var t = Thread(Runnable {
-            println("Listening for connections on ${this.settings.host}: ${this.settings.port}")
-            val server = ServerSocket(this.settings.port)
+            println("Listening for connections on ${this.settings.host}:${this.settings.port}")
+            val server = ServerSocket(this.settings.port, 0, InetAddress.getByName(this.settings.host))
 
             while (true) {
                 val client = server.accept()
@@ -133,7 +134,7 @@ class RockyDB {
      */
     private fun _dumpDb() {
         try {
-            ObjectOutputStream(FileOutputStream(this.settings.dbFilePath)).use { os -> os.writeObject(this.data) }
+            ObjectOutputStream(FileOutputStream(System.getProperty("user.dir") + "\\" + this.settings.dbFilePath)).use { os -> os.writeObject(this.data) }
         } catch(e: Exception) {
             e_log(e.toString())
         }
@@ -144,7 +145,7 @@ class RockyDB {
      */
     private fun _restoreDb() {
         try {
-            ObjectInputStream(FileInputStream(this.settings?.dbFilePath)).use { x ->
+            ObjectInputStream(FileInputStream(System.getProperty("user.dir") + "\\" + this.settings?.dbFilePath)).use { x ->
                 this.data = x.readObject() as HashMap<String, IDataStructure>
             }
         } catch(e: Exception) {
