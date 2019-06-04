@@ -13,12 +13,12 @@ At the moment, RockyDB can store primitive data types, as well as Lists, Queues 
  - allows manual dump and restoration from file
  - sync vs. async execution of commands
  - key event subscribe
+ - JS Connector [https://github.com/sxnb/RockyDB-JS-connector](https://github.com/sxnb/RockyDB-JS-connector)
 
 ### In Progress
 
 - implementation of Matrices, Trees
 - PHP Connector
-- JS Connector
 
 # Available Commands
 Below you can find a table of all available commands. The commands are case insensitive.
