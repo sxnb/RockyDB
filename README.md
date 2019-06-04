@@ -49,7 +49,7 @@ Below you can find a table of all available commands. The commands are case inse
 | SIsEmpty | _key_ | **sisempty mystack** | Returns whether a stack is empty. |
 | Ping | - | **ping** | Pings the server. |
 | Flush | - | **flush** | Removes all keys. |
-| Type | _key_ | **exists key** | Returns the type of a key. |
+| Type | _key_ | **type key** | Returns the type of a key. |
 | Exists | _key_ | **exists key** | Returns whether a key exists. |
 | Watch | _key_ | **watch key** | Gets notified when a key is modified. |
 

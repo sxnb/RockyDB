@@ -24,7 +24,7 @@ class ClientHandler {
         this.reader = Scanner(client.getInputStream())
         this.writer = client.getOutputStream()
         this.running = false
-        this.writeToSocket("Welcome to RockyDB 1.0.\n")
+
         this.operationFactory = OperationFactory()
         this.keyObserver = KeyObserver(this)
     }
