@@ -11,6 +11,7 @@ abstract class AOperation: IOperation {
     var key: String = ""
     var value: String = ""
     var oid: String = ""
+    override var operationType: OperationType = OperationType.WRITE
     private var async: Boolean = false
 
     constructor(key: String, value: String) {

@@ -3,6 +3,7 @@ package RockyDB
 import utils.generateUniqueId
 import dataStructures.IDataStructure
 import operations.IOperation
+import operations.OperationType
 import java.io.FileOutputStream
 import java.io.ObjectOutputStream
 import utils.e_log
@@ -10,13 +11,20 @@ import java.util.HashMap
 import java.io.FileInputStream
 import java.io.ObjectInputStream
 import java.net.ServerSocket
+import java.util.concurrent.locks.ReentrantLock
+import kotlin.concurrent.withLock
 
+/**
+ * This is the main class of RockyDB. It handles the management of threads as well as the
+ * execution of operations.
+ */
 class RockyDB {
     var settings: Settings
 
     var data: HashMap<String, IDataStructure> = hashMapOf()
     var operationQueue: MutableList<IOperation> = mutableListOf()
     var clients: MutableList<Thread> = mutableListOf()
+    var dataLock: ReentrantLock = ReentrantLock()
 
     constructor(settings: Settings) {
         this.settings = settings
@@ -104,13 +112,23 @@ class RockyDB {
     }
 
     /**
-     *
+     * Processes an operation.
      */
     private fun _processOperation(operation: IOperation): IResult {
-        return operation.run(this.data)
+        var result: IResult = GenericResult<Boolean>(false)
+
+        if (operation.operationType === OperationType.WRITE) {
+            this.dataLock.withLock {
+                result = operation.run(this.data)
+            }
+        } else {
+            result = operation.run(this.data)
+        }
+
+        return result
     }
 
-    /**
+     /**
      *
      */
     private fun _dumpDb() {

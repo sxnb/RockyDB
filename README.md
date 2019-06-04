@@ -47,19 +47,14 @@ Below you can find a table of all available commands. The commands are case inse
 | SPeek | _key_ | **speek mystack** | Returns the top of a stack. |
 | SSize | _key_ | **ssize mystack** | Returns the size of a stack. |
 | SIsEmpty | _key_ | **sisempty mystack** | Returns whether a stack is empty. |
-| Ping | | *ping* | Pings the server. |
-| Flush | | *flush* | Removes all keys. |
-| Type | _key_ | *exists key* | Returns the type of a key. |
-| Exists | _key_ | *exists key* | Returns whether a key exists. |
-| Watch | _key_ | *watch key* | Gets notified when a key is modified. |
+| Ping | - | **ping** | Pings the server. |
+| Flush | - | **flush** | Removes all keys. |
+| Type | _key_ | **exists key** | Returns the type of a key. |
+| Exists | _key_ | **exists key** | Returns whether a key exists. |
+| Watch | _key_ | **watch key** | Gets notified when a key is modified. |
 
 # TODO
 | Command | Arguments | Example | Description |
 | ------ | ------ | ------ | ------ |
-| Ping | | | |
-| Flush | | | |
-| Type | | |  |
-| Exists | | | |
 | Increment | | | |
 | Decrement | | | |
-| Watch | | | |
