@@ -1,0 +1,32 @@
+{
+  "name": "rockydb-cli",
+  "version": "1.0.0",
+  "description": "A client for RockyDB",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg . --out-path bin/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxnb/RockyDB.git"
+  },
+  "author": "_sb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sxnb/RockyDB/issues"
+  },
+  "homepage": "https://github.com/sxnb/RockyDB#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.3",
+    "inquirer-autocomplete-prompt": "^1.3.0",
+    "omelette": "^0.4.15-1",
+    "yargs": "^16.1.1"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.9",
+    "prettier": "^2.1.2"
+  }
+}

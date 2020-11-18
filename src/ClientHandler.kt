@@ -36,7 +36,7 @@ class ClientHandler {
         while (this.running) {
             try {
                 val text = this.reader.nextLine()
-                if (text == "exit"){
+                if (text == "exit") {
                     this._closeConnection()
                     continue
                 }
@@ -57,12 +57,16 @@ class ClientHandler {
                         var operationResult = db.instant(operation)
                         this._handleOperationResult(operationResult)
                     }
-                } catch(e: Exception) {
+                } catch (e: Exception) {
                     this.writeToSocket(e.toString())
                 }
 
             } catch (ex: Exception) {
-                this.writeToSocket("EXCEPTION: " + ex.message + "\n")
+                try {
+                    this.writeToSocket("EXCEPTION: " + ex.message + "\n")
+                } catch (e: Exception) {
+                    this._closeConnection()
+                }
                 this._closeConnection()
             } finally {
 
@@ -74,7 +78,7 @@ class ClientHandler {
     fun writeToSocket(message: String) {
         try {
             this.writer.write((message).toByteArray(Charset.defaultCharset()))
-        } catch(ex: Exception) {
+        } catch (ex: Exception) {
             e_log("Could not write to socket - connection lost.")
         }
     }
@@ -85,7 +89,11 @@ class ClientHandler {
 
     private fun _closeConnection() {
         this.running = false
-        this.writeToSocket("Bye!\n")
+        try {
+            this.writeToSocket("Bye!\n")
+        } catch (ex: Exception) {
+            // do nothing
+        }
         this.client.close()
 
     }
